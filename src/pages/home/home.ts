@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
 import { ModalController, NavController } from 'ionic-angular';
-import { AddItemPage } from '../add-item/add-item';
+import { AddItemPage } from '../add-item/add-item'
 import { ItemDetailPage } from '../item-detail/item-detail';
 import { Data } from '../../providers/data/data';
-
  
 @Component({
   selector: 'page-home',
@@ -25,6 +24,10 @@ export class HomePage {
  
   }
  
+  ionViewDidLoad(){
+ 
+  }
+ 
   addItem(){
  
     let addModal = this.modalCtrl.create(AddItemPage);
@@ -43,6 +46,7 @@ export class HomePage {
  
   saveItem(item){
     this.items.push(item);
+    this.dataService.save(this.items);
   }
  
   viewItem(item){
@@ -50,4 +54,5 @@ export class HomePage {
       item: item
     });
   }
+ 
 }
