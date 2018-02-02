@@ -54,5 +54,12 @@ export class HomePage {
       item: item
     });
   }
+
+  deleteItem(item) {
+    var index = this.items.indexOf(item, 0);
+    if (index > -1) {
+        this.items.splice(index, 1);
+    }
+}
  
 }
