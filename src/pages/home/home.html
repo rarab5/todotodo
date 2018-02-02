@@ -11,12 +11,16 @@
  
 <ion-content>
   <ion-list>
-    <ion-item-sliding *ngFor="let item of items" (click)="viewItem(item)"><ion-item>{{item.title}}</ion-item>
+    <ion-item-sliding *ngFor="let item of items" (click)="viewItem(item)">
+      <ion-item><ion-label>{{item.title}}</ion-label></ion-item>
       <ion-item-options side="left">
-        <button ion-button color="danger" (click)="deleteItem(item)">
+        <button id="delete-button" ion-button color="danger" (click)="deleteItem(item)">
             <ion-icon name="trash"></ion-icon> Delete
         </button>
-    </ion-item-options>
-</ion-item-sliding>
+        <button class="edit-button" ion-button color="primary" (click)="editItem(item)">
+          <ion-icon name="brush"></ion-icon> Edit
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
   </ion-list>
 </ion-content>
